@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>รายการสั่งซื้อ | Body Scent</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* เฉพาะหน้านี้: ตารางรายการสั่งซื้อ */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--c-line);
+      border-radius: var(--radius);
+      background: var(--c-white);
+    }
+    #ordersTable {
+      width: 100%;
+      min-width: 820px;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+    #ordersTable th,
+    #ordersTable td {
+      padding: var(--s-2) var(--s-3);
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--c-line);
+    }
+    #ordersTable thead th {
+      font-family: var(--f-serif);
+      font-weight: 400;
+      white-space: nowrap;
+      color: var(--c-ink);
+      background: var(--c-cream);
+      border-bottom: 1px solid var(--c-line-strong);
+    }
+    #ordersTable tbody tr:last-child td { border-bottom: 0; }
+    #ordersTable tbody tr:hover td { background: var(--c-cream); }
+    #ordersTable td:nth-child(1) { white-space: nowrap; color: var(--c-ink-soft); }
+    #ordersTable td:nth-child(5) { white-space: nowrap; color: var(--c-accent-deep); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html">Body Scent</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">เมนู</button>
+      <nav class="nav" id="site-nav" aria-label="เมนูหลัก">
+        <a href="index.html">หน้าแรก</a>
+        <a href="product.html">สินค้าทั้งหมด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head">
+          <h1 class="section-title">รายการสั่งซื้อ</h1>
+          <p class="lead">รายการล่าสุดอยู่ด้านบน</p>
+        </div>
+
+        <div class="table-wrap">
+          <table id="ordersTable">
+            <thead>
+              <tr>
+                <th scope="col">วันเวลา</th>
+                <th scope="col">ชื่อลูกค้า</th>
+                <th scope="col">เบอร์โทร/Line</th>
+                <th scope="col">รายการสินค้า</th>
+                <th scope="col">จำนวนเงินรวม</th>
+                <th scope="col">หมายเหตุ</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__bottom" style="margin-top:0;border-top:0;padding-top:0;">&copy; 2026 Body Scent</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // เปิด/ปิดเมนูบนมือถือ
+    (function () {
+      var btn = document.querySelector(".nav-toggle");
+      var nav = document.getElementById("site-nav");
+      if (!btn || !nav) return;
+      btn.addEventListener("click", function () {
+        var open = nav.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", open);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ขอบคุณที่สั่งซื้อ | Body Scent</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* เฉพาะหน้านี้ */
+    .thanks {
+      min-height: calc(100vh - 77px);
+      min-height: calc(100svh - 77px);
+      display: flex;
+      align-items: center;
+      padding: var(--s-6) 0;
+      background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-white) 100%);
+      text-align: center;
+    }
+    .thanks p { margin-left: auto; margin-right: auto; }
+    .thanks__rule {
+      display: block;
+      width: 56px;
+      height: 1px;
+      margin: 0 auto var(--s-4);
+      background: var(--c-accent);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html">Body Scent</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">เมนู</button>
+      <nav class="nav" id="site-nav" aria-label="เมนูหลัก">
+        <a href="index.html">หน้าแรก</a>
+        <a href="product.html">สินค้าทั้งหมด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="thanks">
+    <div class="container">
+      <h1>ขอบคุณที่สั่งซื้อ</h1>
+      <span class="thanks__rule" aria-hidden="true"></span>
+      <p class="lead">เราได้รับคำสั่งซื้อของคุณเรียบร้อยแล้ว และจะติดต่อกลับตามช่องทางที่คุณแจ้งไว้</p>
+      <a class="btn btn--gold" href="index.html">กลับหน้าแรก</a>
+    </div>
+  </main>
+
+  <script>
+    // เปิด/ปิดเมนูบนมือถือ
+    (function () {
+      var btn = document.querySelector(".nav-toggle");
+      var nav = document.getElementById("site-nav");
+      if (!btn || !nav) return;
+      btn.addEventListener("click", function () {
+        var open = nav.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", open);
+      });
+    })();
+  </script>
+</body>
+</html>

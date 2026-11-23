@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>สินค้าทั้งหมด | Body Scent</title>
+  <meta name="description" content="น้ำหอมฉีดตัวและโรลออน Body Scent เลือกกรองตามอารมณ์ Fresh, Sweet, Confident, Romance">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ข้อความโหลด/ผิดพลาดที่ script.js ใส่ใน #product-list ให้กว้างเต็มแถว */
+    .product-grid > p { grid-column: 1 / -1; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html">Body Scent</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">เมนู</button>
+      <nav class="nav" id="site-nav" aria-label="เมนูหลัก">
+        <a href="index.html">หน้าแรก</a>
+        <a href="product.html" aria-current="page">สินค้าทั้งหมด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h1 class="section-title">สินค้าทั้งหมด</h1>
+          <p class="lead">น้ำหอมฉีดตัวและโรลออน เลือกตามอารมณ์ที่ใช่สำหรับวันนี้</p>
+        </div>
+
+        <div id="filter-bar" class="filters" role="group" aria-label="กรองสินค้าตามอารมณ์"></div>
+
+        <div id="product-list" class="product-grid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="grid grid--3">
+        <div>
+          <h4>Body Scent</h4>
+          <p>น้ำหอมฉีดตัวและโรลออน 4 อารมณ์ ออกแบบมาเพื่อทุกจังหวะของวัน</p>
+        </div>
+        <div>
+          <h4>เมนู</h4>
+          <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="product.html">สินค้าทั้งหมด</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>เลือกตามอารมณ์</h4>
+          <ul>
+            <li><a href="product.html?mood=fresh">Fresh</a></li>
+            <li><a href="product.html?mood=sweet">Sweet</a></li>
+            <li><a href="product.html?mood=confident">Confident</a></li>
+            <li><a href="product.html?mood=romance">Romance</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">&copy; 2026 Body Scent</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // เปิด/ปิดเมนูบนมือถือ
+    (function () {
+      var btn = document.querySelector(".nav-toggle");
+      var nav = document.getElementById("site-nav");
+      if (!btn || !nav) return;
+      btn.addEventListener("click", function () {
+        var open = nav.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", open);
+      });
+    })();
+  </script>
+</body>
+</html>
